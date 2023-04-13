@@ -26,13 +26,11 @@ loginForm.addEventListener('submit', ev => {
                 return console.error(msg);
             };
 
-            const { room } = loginData
             sessionStorage.clear();
             sessionStorage.setItem('token', token);
             sessionStorage.setItem('username', user.name);
-            sessionStorage.setItem('room', room);
 
-            window.location = 'chat.html';
+            alert('Login Successful')
         })
         .catch(e => {
             console.log(e);
@@ -54,7 +52,7 @@ function handleCredentialResponse(response) {
             sessionStorage.setItem('token', token)
             sessionStorage.setItem('username', user.name)
 
-            //window.location = 'chat.html';
+            alert('Login Successful')
         })
         .catch(e => {
             console.log(e);
