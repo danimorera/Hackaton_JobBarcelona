@@ -6,6 +6,30 @@ const User = require('../models/User');
 const { generateJWT } = require('../helpers/generateJWT');
 const { googleVerify } = require("../helpers/google-verify");
 
+
+
+
+const gitLogin = (req = request, res = response) => {
+    
+    const { name, email, password } = req.body;
+    try {
+
+
+
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Server error when login in with github authentication',
+            error
+        })
+    }
+}
+
+
+
+
+
+
+
 //TODO capture errors in register
 const register = async (req = request, res = response) => {
 

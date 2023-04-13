@@ -14,7 +14,6 @@ loginForm.addEventListener('submit', ev => {
         };
     };
 
-
     fetch(url + 'login', {
         method: 'POST',
         body: JSON.stringify(loginData),

@@ -13,6 +13,12 @@ const { validateJWT } = require("../middlewares/validate-jwt");
 const { emailExists } = require('../helpers/db-validators');
 
 //ROUTES
+
+router.post('/github', [
+    check('id_token', 'ID_Token necessary').not().isEmpty(),
+    validateFields
+], googleSignIn);
+
 router.post('/login', [
     check('email', 'Email is not valid').isEmail(),
     check('password', 'password is mandatory').not().isEmpty(),

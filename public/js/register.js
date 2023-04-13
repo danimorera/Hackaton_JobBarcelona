@@ -25,9 +25,9 @@ registerForm.addEventListener('submit', ev => {
             };
             sessionStorage.setItem('token', token)
             sessionStorage.setItem('username', user.name)
-            sessionStorage.setItem('room', room)
-            
+                
             alert("Thanks for your data!")
+            window.location = "index.html"
         })
         .catch(e => {
             console.log(e);
