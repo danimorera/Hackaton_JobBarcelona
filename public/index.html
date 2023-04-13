@@ -24,26 +24,26 @@
 <body class="container" onload="sessionStorage.clear()">
     <h1 class="header">Job Barcelona</h1>
     <div class="row mt-5">
-       
+
         <div class="col-sm-6">
-            <h2>Google Sign In</h2>
+            <h3>Social Login In</h3>
+            <hr>
+            <div class="d-grid mx-auto">
+                <a href="http://localhost:8080/auth/github" class="btn btn-secondary">
+                    <i class="fab fa-github me-2"></i>Sign in with GitHub
+                </a>
+            </div>
             <hr>
             <br>
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <div id="g_id_onload"
                 data-client_id=984572131410-o9cuacbibg49hktcjp875l5qntuio7vp.apps.googleusercontent.com
-                data-login_uri="http://localhost:8080/api/auth/google"
-                data-auto_prompt="false"
+                data-login_uri="http://localhost:8080/api/auth/google" data-auto_prompt="false"
                 data-callback="handleCredentialResponse">
             </div>
 
-            <div class="g_id_signin" 
-                data-type="standard" 
-                data-size="large" 
-                data-theme="outline"
-                data-text="sign_in_with" 
-                data-shape="rectangular" 
-                data-logo_alignment="left">
+            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
             </div>
             <br>
             <button id="google_signout">
@@ -57,7 +57,7 @@
             <form class="d-grid">
                 <input type="text" name="email" class="form-control mb-2" placeholder="Email" />
                 <input type="password" name="password" class="form-control mb-2" placeholder="Password" />
-                        
+
                 <button type=submit class="btn btn-primary">
                     Login
                 </button>
@@ -66,7 +66,7 @@
     </div>
     <hr>
     <p>Don't have an account yet? <a href="#" onclick="openRegistration()">Register here</a>.</p>
-    
+
     <script>
         function openRegistration() {
             window.location = 'register.html';

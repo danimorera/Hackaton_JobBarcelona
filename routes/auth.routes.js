@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const passport = require('passport');
 const { check } = require("express-validator");
 
 
@@ -14,10 +15,15 @@ const { emailExists } = require('../helpers/db-validators');
 
 //ROUTES
 
-router.post('/github', [
-    check('id_token', 'ID_Token necessary').not().isEmpty(),
-    validateFields
-], googleSignIn);
+router.get('/github',
+  passport.authenticate('github'));
+
+router.get('/github/callback', 
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 router.post('/login', [
     check('email', 'Email is not valid').isEmail(),
