@@ -15,13 +15,12 @@ const { emailExists } = require('../helpers/db-validators');
 
 //ROUTES
 
-router.get('/github',
-  passport.authenticate('github'));
+router.get('/github', passport.authenticate('github'));
 
-router.get('/github/callback', 
-  passport.authenticate('github', { failureRedirect: '/login' }),
-  function(req, res) {
+router.get('/github/redirect', passport.authenticate('github', { failureRedirect: '/login' }),
+  (req, res) => {
     // Successful authentication, redirect home.
+    //TODO handle tokens and DB
     res.redirect('/');
   });
 
